@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("#calc").click(function(){
+       // $("#sub").val( parseFloat($("#a").val()) + parseFloat($("#b").val()) );
+	  var marks = parseFloat($('#marks').val());
+	  var grade = parseFloat($('#grade').val());
+	  var pointer = parseFloat($('#pointer').val());
+	  var credit_hour = parseFloat($('#credit_hour').val());
+	  var sumPointer = (pointer*1)*(credit_hour*1);
+	  var gpa = sumPointer / credit_hour;
+	   
+	  if ( marks>= 80 && marks <= 100 ) {
+      grade = "A"
+		  pointer = 4.00 }
+    else if ( marks>= 75 && marks <= 79 ) {
+		  grade = "A-"
+      pointer = 3.75 }
+    else if ( marks>= 70 && marks <= 74 ) {
+      grade = "B+"
+		  pointer = 3.50 }
+    else if ( marks>= 65 && marks <= 69 ) {
+      grade = "B"
+		  pointer = 3.00 }
+    else if ( marks>= 60 && marks <= 64 ) {
+      grade = "B-"
+		  pointer = 2.75 }
+	  else if ( marks>= 55 && marks <= 59 ) {
+      grade = "C+"
+		  pointer = 2.50 }
+	  else if ( marks>= 50 && marks <= 54 ) {
+      grade = "C"
+		  pointer = 2.00 }
+	  else if ( marks>= 45 && marks <= 49 ) {
+      grade = "C-"
+		  pointer = 1.75 }
+	   else if ( marks>= 40 && marks <= 44 ) {
+      grade = "D+"
+		  pointer = 1.50 }
+	   else if ( marks>= 35 && marks <= 39 ) {
+      grade = "D"
+		  pointer = 1.00 }
+    else if ( marks>= 0 && marks <= 34 ) {
+      grade="F"
+		  pointer = 0 }
+    else
+      document.write(" Enter number 1-100")
+	   
+	  var sumPointer = (pointer*1)*(credit_hour*1);
+	  var gpa = sumPointer / credit_hour;
+	   
+	  $("#grade").val(grade);
+	  $("#pointer").val(pointer.toFixed(2));
+	  $("#gpa").val(gpa.toFixed(2));
+	   
+    });
+  });
+    </script>
+</head>
+  
+<body>
+  <form name="myform">
+    <p>
+    Enter Marks   <input type="text" id="marks">
+    Enter Credit Hour <input type="text" id="credit_hour">
+    </p>
+
+    <p>
+    <input type="button" value = "calculate" id="calc">
+    Grade <input type="text" id="grade">
+	  Pointer <input type="text" id="pointer">
+	  GPA <input type="text" id="gpa">
+    </p>
+  </form>
+</body>
+</html>
+
+<style>
+  Body {  
+    font-family: Arial, Helvetica, sans-serif;  
+    background-color: lightyellow;  
+  } 
+  
+  button {   
+      background-color: #4CAF50;   
+      width: 20%;  
+      color: black;   
+      padding: 15px;   
+      margin: 10px 0px;   
+      border: none;   
+      cursor: pointer;   
+      } 
+      
+   form {   
+      border: 3px solid #f1f1f1; 
+    text-align: left; 
+      }   
+  
+   input[type=text] {   
+          width: 80%;   
+          margin: 8px 0;  
+          padding: 12px 20px;   
+          display: inline-block;   
+          border: 2px solid black;   
+          box-sizing: border-box;   
+      }  
+  
+   button:hover {   
+      opacity: 0.7;   
+      }    
+  </style>
